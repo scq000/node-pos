@@ -1,0 +1,21 @@
+{
+  "name": "pos",
+  "version": "2.0.0",
+  "description": "My first node package",
+  "scripts": {
+    "start" : "node src/app/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies" : {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scq000/node-pos.git"
+  },
+  "author": "Shechque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scq000/node-pos/issues"
+  },
+  "homepage": "https://github.com/scq000/node-pos#readme"
+}
