@@ -4,9 +4,10 @@
   "description": "My first node package",
   "scripts": {
     "start" : "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node --matchall src/test/spec/main-test.js "
   },
   "devDependencies" : {
+    "jasmine-node" : "*"
   },
   "repository": {
     "type": "git",
