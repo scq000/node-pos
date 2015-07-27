@@ -51,15 +51,4 @@ Cart.prototype.getSavedMoney = function (discountItemsDetail) {
   return savedMoney;
 };
 
-Cart.prototype.getFreeItemsString = function (discountItemsDetail) {
-  var freeItemsString = '';
-
-  discountItemsDetail.forEach(function (discountItemDetail) {
-    var freeItem = discountItemDetail.cartItem;
-    freeItemsString += '名称：' + freeItem.item.name + '，数量：' + discountItemDetail.freeCount + freeItem.item.unit + '\n';
-  });
-
-  return freeItemsString;
-};
-
 module.exports = Cart;

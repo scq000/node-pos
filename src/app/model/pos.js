@@ -27,9 +27,6 @@ POS.prototype.getReceipt = function () {
   '----------------------\n' +
     this.cart.getCartItemsString() +
   '----------------------\n' +
-  '挥泪赠送商品：\n' +
-    this.cart.getFreeItemsString(this.discountItemsDetail)+
-  '----------------------\n' +
   '总计：' + Utils.formatPrice(this.cart.getAmount()) + '(元)\n' +
   '节省：' + Utils.formatPrice(this.cart.getSavedMoney(this.discountItemsDetail)) + '(元)\n' +
   '**********************';
