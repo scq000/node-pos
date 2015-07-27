@@ -1,23 +1,17 @@
 var Strategy = {
   buyTwoGetOneFree: function (barcodes,cart) {
-    var discountItemsDetail = [];
+    var ReceiptItem = require('./receipt-item.js');
+    var receiptItems = [];
 
-    barcodes.forEach(function(barcode) {
-      var cartItem = cart.findCartItem(barcode);
-      if(cartItem) {
-        var freeCount = Math.floor(cartItem.count / 3);
-        var savedMoney = freeCount * cartItem.item.price;
-
-        cartItem.getSubTotal = function () {
-          return this.item.price * (this.count - Math.floor(this.count / 3));
-        };
-
-
-        discountItemsDetail.push({cartItem:cartItem ,freeCount:freeCount , savedMoney: savedMoney });
-      }
+    cart.cartItems.forEach(function(cartItem){
+      var isExisted = (barcodes.indexOf(cartItem.item.barcode) != -1);
+      var discount = isExisted? Math.floor(cartItem.count / 3) * cartItem.item.price
+                                                : 0;                                                
+      var receiptItem = new ReceiptItem(cartItem,discount);
+      receiptItems.push(receiptItem);
     });
 
-  return discountItemsDetail;
+    return receiptItems;
 
   }
 };
