@@ -1,7 +1,6 @@
 var PromotionCalculator = require('./promotion-calculator.js');
 var Utils = require('./utils.js');
 
-
 function POS(cart,scanner) {
   this.cart = cart;
   this.scanner = scanner;
@@ -14,24 +13,20 @@ POS.prototype.scan = function (tags){
   }
 };
 
-POS.prototype.discount = function (promotion) {
-  var promotionCalculator = new PromotionCalculator(promotion,this.cart);
-  this.discountItemsDetail = promotionCalculator.getDiscountItemsDetial();
-};
-
 POS.prototype.getReceipt = function () {
+  var Receipt = require('./receipt.js');
+  var Utils = require('./utils.js');
+  var PromotionCalculator = require('./promotion-calculator.js');
 
-  var receipt =
-  '***<没钱赚商店>收据***\n' +
-  '打印时间：' + Utils.getCurrentTime() +'\n' +
-  '----------------------\n' +
-    this.cart.getCartItemsString() +
-  '----------------------\n' +
-  '总计：' + Utils.formatPrice(this.cart.getAmount()) + '(元)\n' +
-  '节省：' + Utils.formatPrice(this.cart.getSavedMoney(this.discountItemsDetail)) + '(元)\n' +
-  '**********************';
+  var receipt = new Receipt();
+  var promotions = Utils.loadPromotions();
 
-  return receipt;
+  for(var i = 0; i < promotions.length; i++) {
+    var discounter = new PromotionCalculator(promotions[i],this.cart);
+    receipt.setDiscounter(discounter);
+  }
+
+  return receipt.toString();
 };
 
 module.exports = POS;
