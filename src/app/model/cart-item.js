@@ -9,11 +9,4 @@ CartItem.prototype.getSubTotal = function () {
 
 };
 
-CartItem.prototype.getString = function () {
-  return '名称：' + this.item.name +
-    '，数量：' + this.count + this.item.unit +
-    '，单价：' + this.item.price.toFixed(2) +
-    '(元)，小计：' + this.getSubTotal().toFixed(2) + '(元)\n';
-};
-
 module.exports = CartItem;

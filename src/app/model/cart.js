@@ -31,24 +31,5 @@ Cart.prototype.getAmount = function () {
   return amount;
 };
 
-Cart.prototype.getCartItemsString = function () {
-  var cartItemsString = '';
-
-  this.cartItems.forEach(function (cartItem) {
-    cartItemsString += cartItem.getString();
-  });
-
-  return cartItemsString;
-};
-
-Cart.prototype.getSavedMoney = function (discountItemsDetail) {
-  var savedMoney = 0;
-
-  discountItemsDetail.forEach(function (discountItemDetail) {
-    savedMoney += discountItemDetail.savedMoney;
-  });
-
-  return savedMoney;
-};
 
 module.exports = Cart;
