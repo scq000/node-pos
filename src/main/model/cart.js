@@ -31,5 +31,4 @@ Cart.prototype.getAmount = function () {
   return amount;
 };
 
-
 module.exports = Cart;

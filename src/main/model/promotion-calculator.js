@@ -1,5 +1,3 @@
-
-
 function PromotionCalculator(promotion,cart){
   this.promotion = promotion;
   this.cart = cart;

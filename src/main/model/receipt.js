@@ -3,9 +3,7 @@ function Receipt(){
 }
 
 Receipt.prototype.setDiscounter = function (discounter) {
-
   this.receiptItems = discounter.getDiscountItemsDetial();
-
 };
 
 Receipt.prototype.getReceiptItemsString = function () {

@@ -6,7 +6,7 @@ function printReceipt(tags) {
   var cart = new Cart();
   var scanner = new Scanner();
   var pos = new POS(cart,scanner);
-  
+
   pos.scan(tags);
 
   var receipt = pos.getReceipt();
@@ -14,6 +14,5 @@ function printReceipt(tags) {
   console.log(receipt);
 
 }
-
 
 module.exports.main = printReceipt;

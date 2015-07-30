@@ -7,7 +7,6 @@ ReceiptItem.prototype.getSubTotal = function() {
   return this.cartItem.getSubTotal() - this.discount;
 };
 
-
 ReceiptItem.prototype.getString = function() {
   var Utils = require('./utils.js');
 
