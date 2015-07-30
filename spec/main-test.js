@@ -1,5 +1,5 @@
-var printReceipt = require('../../app/main.js').main;
-var Utils = require('../../app/model/utils.js');
+var printReceipt = require('../src/main/main.js').main;
+var Utils = require('../src/main/model/utils.js');
 
 describe('pos', function() {
   var allItems, inputs, dateDigitToString;
