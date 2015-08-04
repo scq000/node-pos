@@ -4,7 +4,7 @@
   "description": "My first node package",
   "scripts": {
     "start": "node app.js",
-    "test": "jasmine spec/main-test.js "
+    "test": "jasmine"
   },
   "devDependencies": {
     "jasmine": "^2.3.1"

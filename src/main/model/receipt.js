@@ -3,7 +3,7 @@ function Receipt(){
 }
 
 Receipt.prototype.setDiscounter = function (discounter) {
-  this.receiptItems = discounter.getDiscountItemsDetial();
+  this.receiptItems = discounter.getReceiptItems();
 };
 
 Receipt.prototype.getReceiptItemsString = function () {
@@ -16,7 +16,7 @@ Receipt.prototype.getReceiptItemsString = function () {
   return receiptItemsString;
 };
 
-Receipt.prototype.getAmount = function (cart) {
+Receipt.prototype.getAmount = function () {
   var amount = 0;
 
   this.receiptItems.forEach(function (receiptItem) {

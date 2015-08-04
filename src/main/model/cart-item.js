@@ -4,9 +4,7 @@ function CartItem(item,count) {
 }
 
 CartItem.prototype.getSubTotal = function () {
-
       return this.count  * this.item.price;
-
 };
 
 module.exports = CartItem;

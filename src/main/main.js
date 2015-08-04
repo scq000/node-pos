@@ -8,11 +8,8 @@ function printReceipt(tags) {
   var pos = new POS(cart,scanner);
 
   pos.scan(tags);
-
   var receipt = pos.getReceipt();
-
   console.log(receipt);
-
 }
 
 module.exports.main = printReceipt;
